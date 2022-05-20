@@ -1,19 +1,17 @@
 import React from 'react';
 import './App.css';
-import BtnInc from "./components/buttonInc";
-import CounterValue from "./components/counterValue";
-import BtnDec from "./components/buttonDec";
 import GenreToggle from "./components/genreToggle";
 import SearchInput from "./components/searchInput";
+import header from "./components/header";
+import Counter from "./components/counter/counter";
 
 function App() {
 
   return (
     <div className="App">
+      {header("Hello React!!!")}
       <div/>
-      <BtnInc/>
-      <CounterValue value={123}></CounterValue>
-      <BtnDec/>
+      <Counter startCount={5}/>
       <div/>
       <GenreToggle/>
       <div/>
