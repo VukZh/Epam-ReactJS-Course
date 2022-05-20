@@ -11,13 +11,13 @@ export default class SearchInput extends React.PureComponent {
       <>
         <TextField label="Search" variant="outlined" id="raised-button-file"/>
         <div/>
-        <label htmlFor="raised-button-file">
+        <label htmlFor="Search">
           <Button variant="contained">
             Search
           </Button>
         </label>
       </>
 
-   )
+  )
   }
 }
