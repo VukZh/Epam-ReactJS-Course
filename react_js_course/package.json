@@ -4,7 +4,8 @@
   "description": "ReactJS movies app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development",
+    "start": "webpack-dev-server",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

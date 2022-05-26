@@ -45,6 +45,11 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "public/index.html"
     }),
-    new MiniCssExtractPlugin()
-  ]
+    new MiniCssExtractPlugin({
+      filename: 'style-[hash:8].css'
+    })
+  ],
+  devServer: {
+    open: true
+  }
 }
