@@ -8,23 +8,18 @@ module.exports = (env = {}) => {
   const isProd = env.production;
   const isDev = env.development;
 
-  const getStyleLoaders = () => {
-    return [
-      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader'
-    ]
-  }
-
   return {
     mode: isProd ? "production" : isDev && "development",
     devtool: "source-map",
-    entry: path.resolve(__dirname, './src/index.js'),
+    resolve: {
+      extensions: [".ts", ".tsx", ".js", ".jsx"]
+    },
+    entry: path.resolve(__dirname, './src/index.tsx'),
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: ['babel-loader']
+          test: /\.(ts|tsx)$/,
+          use: ['ts-loader']
         },{
           test: /\.(png|gif|ico|jpg|jpeg)$/,
           use: [{
@@ -45,9 +40,21 @@ module.exports = (env = {}) => {
           }]
         }
         ,{
-          test: /\.(css)$/,
-          use: getStyleLoaders(),
-        }
+          test: /\.css$/,
+          use: [
+            isProd ? MiniCssExtractPlugin.loader : "style-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: {
+                  localIdentName: "[hash:base64]",
+                  auto: true
+                },
+                sourceMap: true
+              }
+            },
+          ]
+        },
       ]
     },
     output: {
