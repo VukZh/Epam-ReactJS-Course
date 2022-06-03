@@ -300,3 +300,5 @@ const data = [
     runtime: '1h 31min'
   },
 ];
+
+export default data;
