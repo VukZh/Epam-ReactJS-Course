@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
+  "include": ["src"],
   "files": [
     "./src/index.tsx"
   ]
