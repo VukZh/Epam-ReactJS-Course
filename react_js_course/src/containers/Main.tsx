@@ -9,7 +9,7 @@ const Main: React.FC = () => (
     <div>
         <div className="container">
             <div className="columns is-vcentered">
-                <div className="column is-8">
+                <div className="column is-9">
                     <GenreTabs/>
                 </div>
                 <div className="column">
@@ -24,9 +24,9 @@ const Main: React.FC = () => (
         <div className="container">
             <div className="columns is-multiline">
                     {data.map(
-                        el => (
+                        (el, index) => (
                             <div className="column is-one-third">
-                                <Card title={el.title} releaseDate={el.releaseDate}/>
+                                <Card title={el.title} releaseDate={el.releaseDate} rating={el.rating} index={index}/>
                             </div>
                         )
                     )}
