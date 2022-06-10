@@ -1,0 +1,34 @@
+.main--topside {
+  margin: 0 auto;
+}
+
+.main--hr {
+  margin: 0 2rem;
+  background-color: gray;
+}
+
+.main--sortpart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4rem;
+}
+
+.main--sortpart--genre {
+  width: 50%;
+}
+
+.main--sortpart--sortby {
+  width: 30%;
+}
+
+.main--cardscontainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.main--cardscontainer--cardwrapper {
+  margin: 1rem 3rem;
+}

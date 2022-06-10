@@ -1,0 +1,19 @@
+.genretabs {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: white;
+  width: 100%;
+  list-style-type: none;
+}
+
+.genretabs--link {
+  color: white;
+  &:hover {
+    color: brown;
+    border-bottom: 4px solid red;
+    padding-bottom: 17px;
+  }
+}
+
