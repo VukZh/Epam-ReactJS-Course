@@ -1,0 +1,38 @@
+.optionsselect--wrapper {
+  position: relative;
+}
+
+.optionsselect--select-wrapper {
+  background-color: hsl(0, 0%, 20%);
+  font-size: 1.5rem;
+  height: 42px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 40rem;
+  text-align: left;
+}
+
+.optionsselect--option-wrapper {
+  position: absolute;
+  top: 42px;
+  background-color: hsl(0, 0%, 15%);
+  font-size: 1.5rem;
+  height: 10rem;
+  width: 37.8rem;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.optionsselect--option {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.optionsselect--option-checkbox {
+  color: aqua;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.8rem;
+}

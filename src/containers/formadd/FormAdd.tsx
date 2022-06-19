@@ -3,6 +3,7 @@ import InputText from "../../components/inputText/InputText";
 import './formadd.style.scss';
 import Button from "../../components/button/Button";
 import img from "../../images/x.png";
+import OptionsSelect from "../../components/optionsselect/OptionsSelect";
 
 const FormAdd: React.FC = () => (
     <div className="formaddwrapper">
@@ -20,14 +21,9 @@ const FormAdd: React.FC = () => (
             <div className="formadd--section">
                 <div className="formadd--section-genre_select">
                     <p>
-                        <label htmlFor="genre_select" className="formadd--genre_select_label"> OPTIONS </label>
+                        <label htmlFor="genre_select" className="formadd--genre_select_label">GENRE</label>
                     </p>
-                    <select id="genre_select" className="formadd--genre_select">
-                        <option value="documentary">Crime</option>
-                        <option value="documentary">Documentary</option>
-                        <option value="horror">Horror</option>
-                        <option value="comedy">Comedy</option>
-                    </select>
+                    <OptionsSelect/>
                 </div>
                 <InputText text="RUNTIME" width="narrow" forThat="runtime" placeholder="minutes" type="number"></InputText>
             </div>
@@ -47,7 +43,6 @@ const FormAdd: React.FC = () => (
                 </div>
 
             </div>
-
         </form>
     </div>
 );
