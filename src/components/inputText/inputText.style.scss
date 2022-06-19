@@ -1,0 +1,26 @@
+.inputwrapper {
+  margin: 0 1rem;
+}
+
+.inputlabel {
+  height: 2rem;
+  color: brown;
+  font-size: 1rem;
+}
+
+.inputfield {
+  background-color: hsl(0, 0%, 20%);
+  font-size: 1.5rem;
+  height: 2.5rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.inputfield-wide {
+  width: 40rem;
+}
+
+.inputfield-narrow {
+  width: 27rem;
+}

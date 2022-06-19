@@ -7,6 +7,8 @@ import Header from "./containers/header/Header";
 
 import TestErrorBoundary from "./containers/TestErrorBoundary/TestErrorBoundary";
 import ErrorBoundary from "./containers/TestErrorBoundary/ErrorBoundary";
+import FormAdd from "./containers/formadd/FormAdd";
+import FormDelete from "./containers/formdelete/FormDelete";
 
 const App = () => (
     <div>
@@ -16,6 +18,9 @@ const App = () => (
         </ErrorBoundary>
         <Main/>
         <Footer/>
+        <FormAdd/>
+        <div></div>
+        <FormDelete/>
     </div>
 );
 

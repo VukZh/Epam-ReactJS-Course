@@ -1,0 +1,65 @@
+.formaddwrapper {
+  width: 73rem;
+  background-color: hsl(0, 0%, 15%);
+  margin: 15px auto;
+  padding: 20px 15px;
+}
+
+.formadd--text {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin: 20px;
+}
+
+.formadd--section {
+  display: flex;
+  margin: 10px;
+}
+
+.formadd--section-genre_select {
+  margin: 0 20px;
+}
+
+.formadd--genre_select_label,
+.formadd--section-overview_label {
+  height: 2rem;
+  color: brown;
+  font-size: 1rem;
+}
+
+.formadd--genre_select {
+  background-color: hsl(0, 0%, 20%);
+  font-size: 1.5rem;
+  height: 2.5rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 40rem;
+}
+
+.formadd--section-overview {
+  margin: 0 30px;
+}
+
+.formadd--section-overview-text {
+  width: 69rem;
+  height: 20rem;
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  resize: none;
+}
+
+.formadd--buttons {
+  justify-content: flex-end;
+}
+
+.formadd--buttons-wrapper {
+  margin: 1rem;
+}
+
+.formadd-img {
+  margin-left: 71.5rem;
+}
