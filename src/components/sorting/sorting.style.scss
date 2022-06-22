@@ -1,0 +1,24 @@
+.sortingcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sortingcontainer--text{
+  font-size: 1.5rem;
+  color: grey;
+  margin: 0 1rem;
+}
+
+.sortingcontainer--select{
+  width: 15rem;
+  height: 2.6rem;
+  font-size: 1.5rem;
+  background-color: hsl(0, 0%, 10%);
+  color: white;
+  border: none;
+}
+
+.sortingcontainer--select--option{
+  background-color: hsl(0, 0%, 10%);
+}

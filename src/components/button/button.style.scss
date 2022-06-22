@@ -1,0 +1,33 @@
+.button {
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  width: 10rem;
+  height: 2.6rem;
+  border-radius: 3px;
+  &:hover {
+    filter: invert(10%);
+    border: 1px solid;
+  }
+  &:active {
+    filter: invert(20%);
+    border: 3px solid;
+  }
+}
+
+.button-add {
+  background-color: #222121;
+  color: brown;
+}
+
+.button-search {
+  background-color: brown;
+  color: white;
+}
+
+.button-error {
+  background-color: red;
+  color: white;
+}
