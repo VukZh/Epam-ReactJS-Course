@@ -4,11 +4,13 @@ import './formadd.style.scss';
 import Button from "../../components/button/Button";
 import img from "../../images/x.png";
 import OptionsSelect from "../../components/optionsselect/OptionsSelect";
+import {FormAddProps} from "./formadd.model";
 
-const FormAdd: React.FC = () => (
+const FormAdd: React.FC<FormAddProps> = ({typeAdd, close}) => (
     <div className="formaddwrapper">
-        <img src={img} alt="" width="20px" className="formadd-img"/>
-        <h3 className="formadd--text">ADD MOVIE</h3>
+        <img src={img} alt="" width="20px" className="formadd-img" onClick={close}/>
+        <h3 className="formadd--text"> {typeAdd ? "ADD MOVIE" : "EDIT"}
+        </h3>
         <form action="">
             <div className="formadd--section">
                 <InputText text="TITLE" width="wide" forThat="title" placeholder="movie title"></InputText>

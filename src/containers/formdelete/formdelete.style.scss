@@ -1,8 +1,11 @@
 .formdeletewrapper {
+  position: fixed;
+  left: calc(100% / 2 - 17rem);
   width: 33rem;
   background-color: hsl(0, 0%, 15%);
   margin: 15px auto;
   padding: 20px 15px;
+  top: 1rem;
 }
 
 .formdelete--text {
