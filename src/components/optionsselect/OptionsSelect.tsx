@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import './optionsselect.style.scss';
-import {OptionsSelectProps} from "./optionSelect.model";
+import './styles.scss';
+import {OptionsSelectProps} from "./models";
 
 const Option: React.FC<OptionsSelectProps> = ({checked, title, checkHandler}) => (
     <div className="optionsselect--option">

@@ -2,7 +2,6 @@ import React, { useState} from "react";
 import './card.style.scss';
 import img from "../../images/x.png";
 import FormDelete from "../../containers/formdelete/FormDelete";
-import {Modal} from "../../containers/modal/Modal";
 import FormAdd from "../../containers/formadd/FormAdd";
 import {ContextMenuProps} from "./contextmenu.model";
 
@@ -28,17 +27,13 @@ const ContextMenu: React.FC<ContextMenuProps> = ({closeMenu}) => {
             </div>
 
             {showModalDelete && (
-                <Modal>
-                    <FormDelete close={closeFormDeleteHandler}/>
-                </Modal>
-                )
+                <FormDelete close={closeFormDeleteHandler}/>
+            )
             }
 
             {showModalEdit && (
-                <Modal>
-                    <FormAdd typeAdd={false} close={closeFormEditHandler}/>
-                </Modal>
-                )
+                <FormAdd typeAdd={false} close={closeFormEditHandler}/>
+            )
             }
     </div>
 

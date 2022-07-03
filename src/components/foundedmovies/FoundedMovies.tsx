@@ -1,6 +1,6 @@
 import React from "react";
-import {FoundedMoviesProps} from './foundedmovies.model';
-import './foundedmovies.style.scss';
+import {FoundedMoviesProps} from './models';
+import './styles.scss';
 
 const FoundedMovies: React.FC<FoundedMoviesProps> = ({found}) => (
     <div className="foundedmovies--wrapper">

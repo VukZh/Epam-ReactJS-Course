@@ -4,35 +4,36 @@
 
 .optionsselect--select-wrapper {
   background-color: hsl(0, 0%, 20%);
-  font-size: 1.5rem;
-  height: 42px;
+  font-size: 1rem;
+  height: 34px;
   color: white;
   border: none;
   border-radius: 5px;
-  width: 40rem;
+  width: 28rem;
   text-align: left;
 }
 
 .optionsselect--option-wrapper {
   position: absolute;
-  top: 42px;
+  top: 34px;
   background-color: hsl(0, 0%, 15%);
   font-size: 1.5rem;
-  height: 10rem;
-  width: 37.8rem;
-  padding: 1rem;
+  height: 9.6rem;
+  width: 11rem;
+  padding: 0.5rem;
   border: 1px solid white;
   border-radius: 5px;
 }
 
 .optionsselect--option {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  user-select: none;
 }
 
 .optionsselect--option-checkbox {
   color: aqua;
   width: 1rem;
-  height: 1rem;
+  height: 0.8rem;
   margin: 0.8rem;
 }

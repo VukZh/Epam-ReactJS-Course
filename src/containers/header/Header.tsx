@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import SiteName from "../../components/sitename/SiteName";
 import img from '../../images/back.png';
 import Button from "../../components/button/Button";
-import './header.style.scss';
-import {Modal} from "../modal/Modal";
+import './styles.scss';
 import FormAdd from "../formadd/FormAdd";
 
 const Header: React.FC = () => {
@@ -28,9 +27,7 @@ const Header: React.FC = () => {
             </div>
 
             {showModal && (
-                <Modal>
-                    <FormAdd typeAdd={true} close={addMovieCloseModalHandler}></FormAdd>
-                </Modal>
+                <FormAdd typeAdd={true} close={addMovieCloseModalHandler}></FormAdd>
             )}
 
         </div>

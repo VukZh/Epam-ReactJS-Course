@@ -1,6 +1,6 @@
 import React from "react";
-import './inputText.style.scss';
-import {InputTextProps} from './inputText.model';
+import './styles.scss';
+import {InputTextProps} from './models';
 
 const InputText: React.FC<InputTextProps> = ({text, width, forThat, placeholder, type}) => (
     <div className='inputwrapper'>

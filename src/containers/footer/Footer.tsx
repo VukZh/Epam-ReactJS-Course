@@ -1,6 +1,6 @@
 import React from 'react';
 import SiteName from "../../components/sitename/SiteName";
-import './footer.style.scss';
+import './styles.scss';
 
 const Footer: React.FC = () => (
     <div className="footercontainer">

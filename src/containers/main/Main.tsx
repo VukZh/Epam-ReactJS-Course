@@ -4,7 +4,7 @@ import FoundedMovies from "../../components/foundedmovies/FoundedMovies";
 import GenreTabs from "../../components/genretabs/GenreTabs";
 import Sorting from "../../components/sorting/Sorting";
 import getMovies from "../../services/getMovies";
-import './main.style.scss';
+import './styles.scss';
 
 const data = getMovies(13);
 

@@ -1,8 +1,8 @@
 .formaddwrapper {
   position: fixed;
   top: 0;
-  left: calc(100% / 2 - 36rem);
-  width: 73rem;
+  left: calc(100% / 2 - 26rem);
+  width: 50rem;
   background-color: hsl(0, 0%, 15%);
   margin: 15px auto;
   padding: 20px 15px;
@@ -10,9 +10,9 @@
 
 .formadd--text {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: normal;
-  margin: 20px;
+  margin: 24px;
 }
 
 .formadd--section {
@@ -26,19 +26,19 @@
 
 .formadd--genre_select_label,
 .formadd--section-overview_label {
-  height: 2rem;
+  height: 0.8rem;
   color: brown;
   font-size: 1rem;
 }
 
 .formadd--genre_select {
   background-color: hsl(0, 0%, 20%);
-  font-size: 1.5rem;
-  height: 2.5rem;
+  font-size: 1rem;
+  height: 1rem;
   color: white;
   border: none;
   border-radius: 5px;
-  width: 40rem;
+  width: 10rem;
 }
 
 .formadd--section-overview {
@@ -46,11 +46,11 @@
 }
 
 .formadd--section-overview-text {
-  width: 69rem;
-  height: 20rem;
+  width: 46rem;
+  height: 8rem;
   background-color: hsl(0, 0%, 20%);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 5px;
   resize: none;
 }
@@ -64,5 +64,5 @@
 }
 
 .formadd-img {
-  margin-left: 71.5rem;
+  margin-left: 48.5rem;
 }

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './genretabs.style.scss';
+import './styles.scss';
 
 const GenreTabs: React.FC = () => {
 

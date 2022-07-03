@@ -1,5 +1,5 @@
 import React from "react";
-import {InputSelProps} from './inputSel.model'
+import {InputSelProps} from './models'
 
 const InputSel: React.FC<InputSelProps> = ({text, width, forThat, placeholder}) => (
     <div className='inputwrapper'>

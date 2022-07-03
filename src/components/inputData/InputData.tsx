@@ -1,5 +1,5 @@
 import React from "react";
-import {InputDataProps} from './InputData.model'
+import {InputDataProps} from './models'
 
 const InputData: React.FC<InputDataProps> = ({text, width, forThat, placeholder}) => (
     <div className='inputwrapper'>
