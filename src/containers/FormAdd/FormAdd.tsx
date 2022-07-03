@@ -1,11 +1,11 @@
 import React from "react";
-import InputText from "../../components/inputText/InputText";
+import InputText from "../../components/InputText/InputText";
 import './styles.scss';
-import Button from "../../components/button/Button";
-import img from "../../images/x.png";
-import OptionsSelect from "../../components/optionsselect/OptionsSelect";
+import Button from "../../components/Button/Button";
+import img from "../../Images/x.png";
+import OptionsSelect from "../../components/OptionsSelect/OptionsSelect";
 import {FormAddProps} from "./models";
-import {Modal} from "../modal/Modal";
+import {Modal} from "../Modal/Modal";
 
 const FormAdd: React.FC<FormAddProps> = ({typeAdd, close}) => (
     <Modal>

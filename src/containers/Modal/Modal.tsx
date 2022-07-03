@@ -8,7 +8,7 @@ export class Modal extends React.Component<{ children?: React.ReactNode }> {
     el: HTMLElement = document.createElement("div");
 
     componentDidMount() {
-        this.el.classList.add("modal-overlay");
+        this.el.classList.add("Modal-overlay");
         modalRoot.appendChild(this.el);
     }
 

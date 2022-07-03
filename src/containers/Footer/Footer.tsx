@@ -1,5 +1,5 @@
 import React from 'react';
-import SiteName from "../../components/sitename/SiteName";
+import SiteName from "../../components/SiteName/SiteName";
 import './styles.scss';
 
 const Footer: React.FC = () => (

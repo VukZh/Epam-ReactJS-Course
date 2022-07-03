@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import './styles.scss';
-import Button from "../../components/button/Button";
+import Button from "../../components/Button/Button";
 import {FormDeleteProps} from "./models";
-import img from '../../images/x.png';
-import {Modal} from "../modal/Modal";
+import img from '../../Images/x.png';
+import {Modal} from "../Modal/Modal";
 
 const FormDelete: React.FC<FormDeleteProps> = ({close}) => {
 

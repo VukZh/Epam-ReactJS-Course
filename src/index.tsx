@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
-import Footer from "./containers/footer/Footer";
-import Main from "./containers/main/Main";
-import Header from "./containers/header/Header";
+import Footer from "./containers/Footer/Footer";
+import Main from "./containers/Main/Main";
+import Header from "./containers/Header/Header";
 
 // import TestErrorBoundary from "./containers/TestErrorBoundary/TestErrorBoundary";
 // import ErrorBoundary from "./containers/TestErrorBoundary/ErrorBoundary";
-// import FormDelete from "./containers/formdelete/FormDelete";
+// import FormDelete from "./containers/FormDelete/FormDelete";
 
 const App = () => (
     <div>

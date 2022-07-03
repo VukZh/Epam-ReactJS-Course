@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Button from '../../components/button/Button';
+import Button from '../../components/Button/Button';
 import './styles.scss';
 
 export default class TestErrorBoundary extends Component<any, any> {

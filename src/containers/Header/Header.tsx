@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import SiteName from "../../components/sitename/SiteName";
-import img from '../../images/back.png';
-import Button from "../../components/button/Button";
+import SiteName from "../../components/SiteName/SiteName";
+import img from '../../Images/back.png';
+import Button from "../../components/Button/Button";
 import './styles.scss';
-import FormAdd from "../formadd/FormAdd";
+import FormAdd from "../FormAdd/FormAdd";
 
 const Header: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
