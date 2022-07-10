@@ -9,6 +9,9 @@ const getMovies = (size: number): moviesFields[] => {
             releaseDate: 2022,
             imgSrc: moviesLink,
             rating: Math.floor(Math.random() * 10),
+            shortDescription: "short description",
+            id: i.toString(),
+            time: "2h 11min"
         })
     }
     return arrMovies;

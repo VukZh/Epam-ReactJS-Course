@@ -2,5 +2,7 @@ export type CardProps = {
     title: string;
     releaseDate: number;
     imgSrc: string;
-    rating: number
+    rating: number;
+    shortDescription: string;
+    id: string
 };
