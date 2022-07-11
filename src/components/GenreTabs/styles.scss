@@ -10,10 +10,11 @@
 
 .genretabs--link {
   color: white;
-  &:hover {
-    color: brown;
-    border-bottom: 4px solid red;
-    padding-bottom: 17px;
-  }
+}
+
+.genretabs--link-active {
+  color: brown;
+  border-bottom: 4px solid red;
+  padding-bottom: 17px;
 }
 

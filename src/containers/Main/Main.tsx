@@ -1,10 +1,10 @@
 import React from 'react';
-import Card from "../../components/card/Card";
-import FoundedMovies from "../../components/foundedmovies/FoundedMovies";
-import GenreTabs from "../../components/genretabs/GenreTabs";
-import Sorting from "../../components/sorting/Sorting";
-import getMovies from "../../services/getMovies";
-import './main.style.scss';
+import Card from "../../components/Card/Card";
+import FoundedMovies from "../../components/FoundedMovies/FoundedMovies";
+import GenreTabs from "../../components/GenreTabs/GenreTabs";
+import Sorting from "../../components/Sorting/Sorting";
+import getMovies from "../../Services/getMovies";
+import './styles.scss';
 
 const data = getMovies(13);
 

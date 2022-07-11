@@ -1,5 +1,5 @@
 import React from "react";
-import './sorting.style.scss';
+import './styles.scss';
 
 const Sorting: React.FC = () => (
     <div className="sortingcontainer">

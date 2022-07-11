@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Button from '../../components/button/Button';
-import './testerrorboundary.style.scss';
+import Button from '../../components/Button/Button';
+import './styles.scss';
 
 export default class TestErrorBoundary extends Component<any, any> {
     state = {

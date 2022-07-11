@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
-import Footer from "./containers/footer/Footer";
-import Main from "./containers/main/Main";
-import Header from "./containers/header/Header";
+import Footer from "./containers/Footer/Footer";
+import Main from "./containers/Main/Main";
+import Header from "./containers/Header/Header";
 
-import TestErrorBoundary from "./containers/TestErrorBoundary/TestErrorBoundary";
-import ErrorBoundary from "./containers/TestErrorBoundary/ErrorBoundary";
+// import TestErrorBoundary from "./containers/TestErrorBoundary/TestErrorBoundary";
+// import ErrorBoundary from "./containers/TestErrorBoundary/ErrorBoundary";
+// import FormDelete from "./containers/FormDelete/FormDelete";
 
 const App = () => (
     <div>
         <Header/>
-        <ErrorBoundary>
-            <TestErrorBoundary/>
-        </ErrorBoundary>
+        {/*<ErrorBoundary>*/}
+        {/*    <TestErrorBoundary/>*/}
+        {/*</ErrorBoundary>*/}
         <Main/>
         <Footer/>
+        <div></div>
     </div>
 );
 
