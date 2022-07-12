@@ -15,22 +15,23 @@ const Header: React.FC = () => {
     const addMovieCloseModalHandler = () => setShowModal(false);
 
     const context = useContext(MainContext);
-    const {changeView, searchView} = context;
+    const {changeView, searchView, movies} = context;
     const imgClickHandler = () => {changeView(true)}
 
+    const CanNotBeDetail = !(!searchView && movies.length);
+
     return (
-        <div className="header" style ={searchView ?{ backgroundImage: `url(${img})`}:{}}>
+        <div className="header" style ={CanNotBeDetail ?{ backgroundImage: `url(${img})`}:{}}>
             <div className="header--container">
+                <SiteName/>
                 {
-                    searchView
+                    CanNotBeDetail
                         ? (
                             <>
-                                <SiteName/>
                                 <Button purpose="add" text="+ ADD MOVIE" onClick={addMovieHandler}/>
                             </>
                         ) : (
                             <>
-                                <SiteName/>
                                 <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={imgClickHandler}/>
                             </>
                     )
@@ -39,9 +40,7 @@ const Header: React.FC = () => {
 
             </div>
 
-            {/*<MovieDetails id={1}/>*/}
-
-            {searchView
+            {CanNotBeDetail
                 ? (
                     <>
                         <div className="header--findtext">FIND YOUR MOVIE</div>

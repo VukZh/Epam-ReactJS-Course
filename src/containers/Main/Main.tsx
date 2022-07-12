@@ -24,7 +24,7 @@ const Main: React.FC = () => {
                     </div>
                 </div>
                 <hr className="main--hr"></hr>
-                <FoundedMovies found={5}/>
+                <FoundedMovies/>
             </div>
 
 

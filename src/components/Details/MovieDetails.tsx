@@ -10,7 +10,11 @@ const MovieDetails: React.FC = () => {
     const context = useContext(MainContext);
     const {movies, detailId} = context;
 
-    const movie = movies.find((item) => item.id === detailId);
+    let movie = movies.find((item) => item.id === detailId);
+
+    if (!movie) {
+        movie = movies[0];
+    }
     const detail = getDetails(detailId);
 
     return (
