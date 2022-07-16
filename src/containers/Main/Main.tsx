@@ -33,8 +33,8 @@ const Main: React.FC = () => {
                     {data.map(
                         (el) => (
                             <div className="main--cardscontainer--cardwrapper">
-                                <Card title={el.title} releaseDate={el.releaseDate} imgSrc={el.imgSrc} rating={el.rating}
-                                      shortDescription={el.shortDescription} id={el.id} key={el.id + el.title}/>
+                                <Card title={el.title} releaseDate={el.release_date} imgSrc={el.poster_path} rating={el.vote_average}
+                                      shortDescription={el.tagline} id={el.id} key={el.id + el.title}/>
                             </div>
                         )
                     )}

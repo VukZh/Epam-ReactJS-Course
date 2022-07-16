@@ -11,8 +11,8 @@ type ContextType = {
     movies: Array<moviesFields>;
     searchView: boolean;
     changeView?(arg:boolean):void;
-    detailId: string;
-    changeDetailId?(arg:string):void;
+    detailId: number;
+    changeDetailId?(arg:number):void;
     currentMovie: number,
     changeCurrentMovie?(arg:number):void;
     changeMovies?([]):void;
@@ -21,16 +21,16 @@ type ContextType = {
 const defaultContext: ContextType = {
     movies: [{
             title: "",
-            releaseDate: 0,
-            imgSrc: "",
-            rating: 0,
-            shortDescription: "",
-            id: "",
-            time: ""
+            release_date: "2022",
+            poster_path: "",
+            vote_average: 0,
+            tagline: "",
+            id: 0,
+            runtime: 0
         }
     ],
     searchView: true,
-    detailId: "",
+    detailId: 0,
     currentMovie: -1,
 }
 
@@ -41,7 +41,7 @@ const App = () => {
     const [movies, setMovies] = useState([]);
     const [currentMovie, setCurrentMovie] = useState(-1);
     const [searchView, setView] = useState(true);
-    const [detailId, setDetailId] = useState("");
+    const [detailId, setDetailId] = useState(0);
     useEffect(() => setMovies(getMovies(13)), []);
 
     return (

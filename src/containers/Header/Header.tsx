@@ -55,7 +55,7 @@ const Header: React.FC = () => {
 
 
             {showModal && (
-                <FormAdd typeAdd={true} close={addMovieCloseModalHandler}></FormAdd>
+                <FormAdd typeAdd={true} close={addMovieCloseModalHandler} close4add={setShowModal}></FormAdd>
             )}
 
         </div>

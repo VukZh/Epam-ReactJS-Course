@@ -6,12 +6,12 @@ const getMovies = (size: number): moviesFields[] => {
     for (let i = 0; i < size; i++) {
         arrMovies.push({
             title: 'title' + i,
-            releaseDate: 2022,
-            imgSrc: moviesLink,
-            rating: Math.floor(Math.random() * 10),
-            shortDescription: "short description",
-            id: i.toString(),
-            time: "2h 11min"
+            release_date: '2022',
+            poster_path: moviesLink,
+            vote_average: Math.floor(Math.random() * 10),
+            tagline: "short description",
+            id: i,
+            runtime: 150
         })
     }
     return arrMovies;

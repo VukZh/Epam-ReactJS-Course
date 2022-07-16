@@ -24,15 +24,15 @@ const MovieDetails: React.FC = () => {
             <div className="detailcontainer-rightSide">
                 <div className="detailcontainer--info">
                     <div className="detailcontainer--info--title">{movie.title}</div>
-                    <div className="detailcontainer--info--rating">{movie.rating}</div>
+                    <div className="detailcontainer--info--rating">{movie.vote_average}</div>
                 </div>
                 <br/>
                 <div className="detailcontainer--info">
-                    <div className="detailcontainer--info--shortdescription">{movie.shortDescription}</div>
+                    <div className="detailcontainer--info--shortdescription">{movie.tagline}</div>
                 </div>
                 <div className="detailcontainer--info-red">
-                    <div className="detailcontainer--info--additional-text-red">{movie.releaseDate}</div>
-                    <div className="detailcontainer--info--additional-text-red">{movie.time}</div>
+                    <div className="detailcontainer--info--additional-text-red">{movie.release_date}</div>
+                    <div className="detailcontainer--info--additional-text-red">{movie.runtime}</div>
                 </div>
                 <div className="detailcontainer--info">
                     <div className="detailcontainer--info--detail">{detail}</div>
