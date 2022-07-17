@@ -4,7 +4,7 @@ import './style.scss';
 import Footer from "./containers/Footer/Footer";
 import Main from "./containers/Main/Main";
 import Header from "./containers/Header/Header";
-import getMovies from "./Services/getMovies";
+import getRealMovies from "./Services/getRealMovies";
 import {moviesFields} from "./Services/getmovies.model";
 
 type ContextType = {
@@ -42,7 +42,10 @@ const App = () => {
     const [currentMovie, setCurrentMovie] = useState(-1);
     const [searchView, setView] = useState(true);
     const [detailId, setDetailId] = useState(0);
-    useEffect(() => setMovies(getMovies(13)), []);
+
+    useEffect(() => {
+        getRealMovies(20, setMovies);
+    }, []);
 
     return (
         <MainContext.Provider value={{

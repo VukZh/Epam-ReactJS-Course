@@ -6,6 +6,10 @@
 }
 
 .cardcontainer--image {
+  width: 16rem;
+  height: 23rem;
+  display: block;
+  margin: 0 auto 0.5rem;
   cursor: pointer;
 }
 
@@ -25,7 +29,7 @@
 }
 
 .cardcontainer--info--title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
 }
 
@@ -36,7 +40,7 @@
 }
 
 .cardcontainer--info--additional-text{
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: gray;
 }
 

@@ -1,9 +1,6 @@
 import React, {useContext} from 'react';
 import './styles.scss';
 import {MainContext} from "../../index";
-import getDetails from "../../Services/getDetails";
-
-const moviesLink = 'https://upload.wikimedia.org/wikipedia/en/f/f9/The_Movies_poster.jpg';
 
 const MovieDetails: React.FC = () => {
 
@@ -15,11 +12,16 @@ const MovieDetails: React.FC = () => {
     if (!movie) {
         movie = movies[0];
     }
-    const detail = getDetails(detailId);
+
+    const getTimeFromMins = (mins: number): string => {
+        let hours = Math.trunc(mins/60);
+        let minutes = mins % 60;
+        return hours + 'h' + minutes + 'm';
+    };
 
     return (
         <div className="detailcontainer">
-                <img src={moviesLink} alt="Placeholder image" className="detailcontainer--image"></img>
+                <img src={movie.poster_path} alt="Placeholder image" className="detailcontainer--image"></img>
 
             <div className="detailcontainer-rightSide">
                 <div className="detailcontainer--info">
@@ -31,11 +33,11 @@ const MovieDetails: React.FC = () => {
                     <div className="detailcontainer--info--shortdescription">{movie.tagline}</div>
                 </div>
                 <div className="detailcontainer--info-red">
-                    <div className="detailcontainer--info--additional-text-red">{movie.release_date}</div>
-                    <div className="detailcontainer--info--additional-text-red">{movie.runtime}</div>
+                    <div className="detailcontainer--info--additional-text-red">{movie.release_date.substr(0, 4)}</div>
+                    <div className="detailcontainer--info--additional-text-red">{getTimeFromMins(movie.runtime)}</div>
                 </div>
                 <div className="detailcontainer--info">
-                    <div className="detailcontainer--info--detail">{detail}</div>
+                    <div className="detailcontainer--info--detail">{movie.overview}</div>
                 </div>
             </div>
         </div>

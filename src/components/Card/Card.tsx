@@ -11,14 +11,14 @@ const Card: React.FC<CardProps> = ({title, releaseDate, imgSrc, shortDescription
     const imgClickHandler = () => {changeDetailId(id); changeView(false)};
     return (
         <div className="cardcontainer">
-            <div className="cardcontainer--image">
-                <img src={imgSrc} alt="Placeholder image" onClick={imgClickHandler}></img>
+            <div>
+                <img src={imgSrc} alt="Placeholder image" onClick={imgClickHandler} className="cardcontainer--image"></img>
                 <ContextMenuIcon id={+id}/>
             </div>
 
             <div className="cardcontainer--info">
                 <div className="cardcontainer--info--title">{title}</div>
-                <div className="cardcontainer--info--date">{releaseDate}</div>
+                <div className="cardcontainer--info--date">{releaseDate.substr(0,4)}</div>
             </div>
             <div className="cardcontainer--info--additional">
                 <div className="cardcontainer--info--additional-text">{shortDescription}</div>
