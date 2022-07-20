@@ -9,7 +9,6 @@ const getRealMovies = (size: number, cb: Function): any => {
     })
     .then((res: any) => {
         const movies = res.data.data;
-        console.log("movies", movies);
         cb(movies);
     })
     .catch((err: any) => {

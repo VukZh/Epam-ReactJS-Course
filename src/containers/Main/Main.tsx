@@ -1,16 +1,28 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import Card from "../../components/Card/Card";
 import FoundedMovies from "../../components/FoundedMovies/FoundedMovies";
 import GenreTabs from "../../components/GenreTabs/GenreTabs";
 import Sorting from "../../components/Sorting/Sorting";
 import './styles.scss';
 import {MainContext} from "../../index";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
+import {useTypedDispatch} from "../../hooks/useTypedDispatch";
+import {GetMovies} from "../../store/actionCreators/movies";
+import SiteName from "../../components/SiteName/SiteName";
 
 const Main: React.FC = () => {
 
-    const context = useContext(MainContext);
-
-    const data = context.movies;
+    const {movies, error, loading} = useTypedSelector(state => state.movies);
+    const dispatch = useTypedDispatch();
+    useEffect(() => {
+        dispatch(GetMovies());
+    }, [])
+    if (loading) {
+        return <h1>loading...</h1>
+    }
+    if (error) {
+        return <h1>{error}</h1>
+    }
 
     return (
         <div>
@@ -30,7 +42,7 @@ const Main: React.FC = () => {
 
             <div>
                 <div className="main--cardscontainer">
-                    {data.map(
+                    {movies.map(
                         (el) => (
                             <div className="main--cardscontainer--cardwrapper">
                                 <Card title={el.title} releaseDate={el.release_date} imgSrc={el.poster_path} rating={el.vote_average}

@@ -6,13 +6,10 @@ import {MainContext} from "../../index";
 
 
 const Card: React.FC<CardProps> = ({title, releaseDate, imgSrc, shortDescription, id}) => {
-    const context = useContext(MainContext);
-    const {changeView, changeDetailId} = context;
-    const imgClickHandler = () => {changeDetailId(id); changeView(false)};
-    return (
+return (
         <div className="cardcontainer">
             <div>
-                <img src={imgSrc} alt="Placeholder image" onClick={imgClickHandler} className="cardcontainer--image"></img>
+                <img src={imgSrc} alt="Placeholder image" onClick={() => {}} className="cardcontainer--image"></img>
                 <ContextMenuIcon id={+id}/>
             </div>
 

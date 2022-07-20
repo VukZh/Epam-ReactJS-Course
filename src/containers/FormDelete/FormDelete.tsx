@@ -6,16 +6,16 @@ import img from '../../Images/x.png';
 import {Modal} from "../Modal/Modal";
 import {MainContext} from "../../index";
 
-const FormDelete: React.FC<FormDeleteProps> = ({close}) => {
+const FormDelete: React.FC<FormDeleteProps> = () => {
 
-    const context = useContext(MainContext);
-    const {currentMovie, movies, changeMovies} = context;
-
-    const deleteHandler = () => {
-        const findMovie = movies.findIndex((movie => movie.id === currentMovie))
-        const newMovies = [...movies.slice(0, findMovie), ...movies.slice(findMovie + 1)];
-        changeMovies(newMovies);
-    }
+    // const context = useContext(MainContext);
+    // const {currentMovie, movies, changeMovies} = context;
+    //
+    // const deleteHandler = () => {
+    //     const findMovie = movies.findIndex((movie => movie.id === currentMovie))
+    //     const newMovies = [...movies.slice(0, findMovie), ...movies.slice(findMovie + 1)];
+    //     changeMovies(newMovies);
+    // }
 
     return (
         <Modal>
@@ -28,7 +28,7 @@ const FormDelete: React.FC<FormDeleteProps> = ({close}) => {
                     Are you sure you want to delete this movie?
                 </div>
                 <div className="formdelete--buttons-wrapper">
-                    <Button purpose="search" text="CONFIRM" onClick={deleteHandler}></Button>
+                    <Button purpose="search" text="CONFIRM" onClick={() => {}}></Button>
                 </div>
             </div>
         </Modal>

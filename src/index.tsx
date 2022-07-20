@@ -6,6 +6,8 @@ import Main from "./containers/Main/Main";
 import Header from "./containers/Header/Header";
 import getRealMovies from "./Services/getRealMovies";
 import {moviesFields} from "./Services/getmovies.model";
+import {Provider} from "react-redux";
+import {store} from "./store";
 
 type ContextType = {
     movies: Array<moviesFields>;
@@ -48,24 +50,26 @@ const App = () => {
     }, []);
 
     return (
-        <MainContext.Provider value={{
-            movies,
-            searchView,
-            changeView: setView,
-            detailId,
-            changeDetailId: setDetailId,
-            currentMovie,
-            changeCurrentMovie: setCurrentMovie,
-            changeMovies: setMovies
-        }
-        }>
-            <div>
-                <Header/>
-                <Main/>
-                <Footer/>
-                <div></div>
-            </div>
-        </MainContext.Provider>
+        <Provider store={store}>
+            <MainContext.Provider value={{
+                movies,
+                searchView,
+                changeView: setView,
+                detailId,
+                changeDetailId: setDetailId,
+                currentMovie,
+                changeCurrentMovie: setCurrentMovie,
+                changeMovies: setMovies
+            }
+            }>
+                <>
+                    <Header/>
+                    <Main/>
+                    <Footer/>
+                </>
+            </MainContext.Provider>
+        </Provider>
+
     )
 };
 

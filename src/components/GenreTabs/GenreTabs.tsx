@@ -1,13 +1,34 @@
-import React, {useState} from "react";
+import React, {Dispatch, useEffect, useState} from "react";
 import './styles.scss';
+import {MoviesAction, MoviesActionTypes} from "../../store/types";
+import {connect, ConnectedProps} from "react-redux";
 
-const GenreTabs: React.FC = () => {
+const GenreTabs: React.FC<GenresProps>  = ({setGenres}) => {
 
     const [allGenres, setAllGenres] = useState(false);
     const [documentaryGenre, setDocumentaryGenre] = useState(false);
     const [comedyGenre, setComedyGenre] = useState(false);
     const [horrorGenre, setHorrorGenre] = useState(false);
     const [crimeGenre, setCrimeGenre] = useState(false);
+
+    useEffect(() => {
+        const genres = [];
+        if (allGenres) {
+            genres.push("");
+        } else if (documentaryGenre) {
+            genres.push("Documentary");
+        };
+        if (comedyGenre) {
+            genres.push("Comedy");
+        };
+        if (horrorGenre) {
+            genres.push("Horror");
+        };
+        if (crimeGenre) {
+            genres.push("Crime");
+        };
+        setGenres(genres);
+    }, [allGenres, documentaryGenre, comedyGenre, horrorGenre, crimeGenre])
 
     const allGenresHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault();
@@ -55,5 +76,19 @@ const GenreTabs: React.FC = () => {
     );
 }
 
-export default GenreTabs;
+const mapDispatchToProps = (dispatch: Dispatch<MoviesAction>) => {
+    return {
+        setGenres: (genres: string[]) =>
+            dispatch({
+                type: MoviesActionTypes.SET_GENRES,
+                payload: genres
+            })
+    }
+}
+
+const connector = connect(null, mapDispatchToProps);
+
+type GenresProps = ConnectedProps<typeof connector>
+
+export default connector(GenreTabs)
 

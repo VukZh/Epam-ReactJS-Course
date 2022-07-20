@@ -9,16 +9,18 @@ import MovieDetails from "../../components/Details/MovieDetails";
 import {MainContext} from "../../index";
 
 const Header: React.FC = () => {
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
+    //
+    // const addMovieHandler = () => setShowModal(true);
+    // const addMovieCloseModalHandler = () => setShowModal(false);
+    //
+    // const context = useContext(MainContext);
+    // const {changeView, searchView, movies} = context;
+    // const imgClickHandler = () => {changeView(true)}
 
-    const addMovieHandler = () => setShowModal(true);
-    const addMovieCloseModalHandler = () => setShowModal(false);
+    // const CanNotBeDetail = !(!searchView && movies.length);
 
-    const context = useContext(MainContext);
-    const {changeView, searchView, movies} = context;
-    const imgClickHandler = () => {changeView(true)}
-
-    const CanNotBeDetail = !(!searchView && movies.length);
+    const CanNotBeDetail = true;
 
     return (
         <div className="header" style ={CanNotBeDetail ?{ backgroundImage: `url(${img})`}:{}}>
@@ -28,11 +30,11 @@ const Header: React.FC = () => {
                     CanNotBeDetail
                         ? (
                             <>
-                                <Button purpose="add" text="+ ADD MOVIE" onClick={addMovieHandler}/>
+                                <Button purpose="add" text="+ ADD MOVIE" onClick={() => {}}/>
                             </>
                         ) : (
                             <>
-                                <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={imgClickHandler}/>
+                                <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={() => {}}/>
                             </>
                     )
                 }
@@ -54,9 +56,9 @@ const Header: React.FC = () => {
             }
 
 
-            {showModal && (
-                <FormAdd typeAdd={true} close={addMovieCloseModalHandler} close4add={setShowModal}></FormAdd>
-            )}
+            {/*{showModal && (*/}
+            {/*    <FormAdd typeAdd={true} close={addMovieCloseModalHandler} close4add={setShowModal}></FormAdd>*/}
+            {/*)}*/}
 
         </div>
     );
