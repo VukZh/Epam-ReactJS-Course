@@ -2,8 +2,23 @@ import React, {Dispatch, useEffect, useState} from "react";
 import './styles.scss';
 import {MoviesAction, MoviesActionTypes} from "../../store/types";
 import {connect, ConnectedProps} from "react-redux";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
+import {useTypedDispatch} from "../../hooks/useTypedDispatch";
+import {GetMovies} from "../../store/actionCreators/movies";
+import makeUrl from "../../utils/makeUrl";
 
 const GenreTabs: React.FC<GenresProps>  = ({setGenres}) => {
+
+    const {sortingField, genres} = useTypedSelector(state => state.movies);
+    const dispatch = useTypedDispatch();
+
+    console.log("genres", genres);
+
+    console.log("sortingField", sortingField, makeUrl(sortingField, genres));
+
+    useEffect(() => {
+        dispatch(GetMovies());
+    }, [genres])
 
     const [allGenres, setAllGenres] = useState(false);
     const [documentaryGenre, setDocumentaryGenre] = useState(false);
@@ -17,16 +32,16 @@ const GenreTabs: React.FC<GenresProps>  = ({setGenres}) => {
             genres.push("");
         } else if (documentaryGenre) {
             genres.push("Documentary");
-        };
+        }
         if (comedyGenre) {
             genres.push("Comedy");
-        };
+        }
         if (horrorGenre) {
             genres.push("Horror");
-        };
+        }
         if (crimeGenre) {
             genres.push("Crime");
-        };
+        }
         setGenres(genres);
     }, [allGenres, documentaryGenre, comedyGenre, horrorGenre, crimeGenre])
 
