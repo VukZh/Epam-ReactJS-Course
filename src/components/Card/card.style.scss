@@ -1,8 +1,27 @@
 .cardcontainer {
   display: block;
   position: relative;
-  width: 15rem;
-  height: 31rem;
+  width: 16rem;
+  height: 28rem;
+}
+
+.cardcontainer--image {
+  cursor: pointer;
+}
+
+.cardcontainer--info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardcontainer--info--date {
+  border: 1px solid white;
+  border-radius: 5px;
+  color: gray;
+  padding: 5px;
+  margin: 0;
+
 }
 
 .cardcontainer--info--title {
@@ -13,6 +32,7 @@
 .cardcontainer--info--additional {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .cardcontainer--info--additional-text{
@@ -36,7 +56,7 @@
   font-size: 1.5rem;
   font-weight: bolder;
   top: 0.5rem;
-  right: -0.75rem;
+  right: 0.3rem;
   cursor: pointer;
 }
 
