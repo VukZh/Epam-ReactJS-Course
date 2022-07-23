@@ -4,45 +4,42 @@
   width: 16rem;
   height: 28rem;
   background-color: hsl(0, 0%, 12%);
-}
-
-.cardcontainer--image {
-  width: 16rem;
-  height: 23rem;
-  display: block;
-  margin: 0 auto 0.5rem;
-  cursor: pointer;
-}
-
-.cardcontainer--info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cardcontainer--info--date {
-  border: 1px solid white;
-  border-radius: 5px;
-  color: gray;
-  padding: 5px;
-  margin: 0;
-
-}
-
-.cardcontainer--info--title {
-  font-size: 1rem;
-  color: white;
-}
-
-.cardcontainer--info--additional {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cardcontainer--info--additional-text{
-  font-size: 0.8rem;
-  color: gray;
+  &--image {
+    width: 16rem;
+    height: 23rem;
+    display: block;
+    margin: 0 auto 0.5rem;
+    cursor: pointer;
+  }
+  &--info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &--info--date {
+    border: 1px solid white;
+    border-radius: 5px;
+    color: gray;
+    padding: 5px;
+    margin: 0;
+  }
+  &--info--title {
+    font-size: 1rem;
+    color: white;
+  }
+  &--info--additional {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &--info--additional-text{
+    font-size: 0.8rem;
+    color: gray;
+  }
+  &--info--additional-text{
+    font-size: 0.8rem;
+    color: gray;
+  }
 }
 
 .contextMenuIcon {

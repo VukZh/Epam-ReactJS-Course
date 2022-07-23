@@ -16,33 +16,29 @@ const Header: React.FC<HeaderProps> = ({setDetail}) => {
 
     const {movies} = useTypedSelector(state => state.movies);
 
-    const CanNotBeDetail = !detail || !(movies.find(movie => movie.id === idMovie));
+    const canNotBeDetail = !detail || !(movies.find(movie => movie.id === idMovie));
 
     const handleClick = () => {
         setDetail(false)
     };
 
     return (
-        <div className="header" style ={CanNotBeDetail ?{ backgroundImage: `url(${img})`}:{}}>
+        <div className="header" style ={canNotBeDetail ?{ backgroundImage: `url(${img})`}:{}}>
             <div className="header--container">
                 <SiteName/>
                 {
-                    CanNotBeDetail
+                    canNotBeDetail
                         ? (
-                            <>
-                                <Button purpose="add" text="+ ADD MOVIE" onClick={() => {}}/>
-                            </>
+                            <Button purpose="add" text="+ ADD MOVIE" onClick={() => {}}/>
                         ) : (
-                            <>
-                                <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={handleClick}/>
-                            </>
+                            <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={handleClick}/>
                     )
                 }
 
 
             </div>
 
-            {CanNotBeDetail
+            {canNotBeDetail
                 ? (
                     <>
                         <div className="header--findtext">FIND YOUR MOVIE</div>
