@@ -2,8 +2,8 @@ import {MoviesAction, MoviesActionTypes} from "../types";
 import {Dispatch} from "redux";
 import axios from "axios";
 
-export const GetMovies = () => {
-    const url = "http://localhost:4000/movies?limit=20";
+export const GetMovies = (urlString?: string) => {
+    const url = urlString ? urlString : "http://localhost:4000/movies?limit=20";
     return async (dispatch: Dispatch<MoviesAction>) => {
         try {
             dispatch({type: MoviesActionTypes.GET_MOVIES});

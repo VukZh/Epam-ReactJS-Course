@@ -2,7 +2,7 @@ const makeUrl = (sortingField: string, genres: string[]) => {
     const baseUrl = "http://localhost:4000/movies?";
     let sortingFieldPart = ""
     if (sortingField) {
-        sortingFieldPart = `sortBy=${sortingField}&`;
+        sortingFieldPart = `sortBy=${sortingField}&sortOrder=desc&`;
     }
     let genresPart = ""
     if (genres.length) {

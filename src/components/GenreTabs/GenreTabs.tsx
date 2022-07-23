@@ -17,7 +17,7 @@ const GenreTabs: React.FC<GenresProps>  = ({setGenres}) => {
     console.log("sortingField", sortingField, makeUrl(sortingField, genres));
 
     useEffect(() => {
-        dispatch(GetMovies());
+        dispatch(GetMovies(makeUrl(sortingField, genres)));
     }, [genres])
 
     const [allGenres, setAllGenres] = useState(false);

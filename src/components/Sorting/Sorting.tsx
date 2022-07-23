@@ -19,7 +19,7 @@ const Sorting: React.FC<SortingProps> = ({setSortingField}) => {
     console.log("sortingField", sortingField, makeUrl(sortingField, genres));
 
     useEffect(() => {
-        dispatch(GetMovies());
+        dispatch(GetMovies(makeUrl(sortingField, genres)));
     }, [sortingField])
 
     const handle = (e: React.ChangeEvent<HTMLSelectElement>) => {
