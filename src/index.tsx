@@ -1,25 +1,77 @@
-import React from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
 import Footer from "./containers/Footer/Footer";
 import Main from "./containers/Main/Main";
 import Header from "./containers/Header/Header";
+import getRealMovies from "./Services/getRealMovies";
+import {moviesFields} from "./Services/getmovies.model";
+import {Provider} from "react-redux";
+import {store} from "./store";
 
-// import TestErrorBoundary from "./containers/TestErrorBoundary/TestErrorBoundary";
-// import ErrorBoundary from "./containers/TestErrorBoundary/ErrorBoundary";
-// import FormDelete from "./containers/FormDelete/FormDelete";
+type ContextType = {
+    movies: Array<moviesFields>;
+    searchView: boolean;
+    changeView?(arg:boolean):void;
+    detailId: number;
+    changeDetailId?(arg:number):void;
+    currentMovie: number,
+    changeCurrentMovie?(arg:number):void;
+    changeMovies?([]):void;
+}
 
-const App = () => (
-    <div>
-        <Header/>
-        {/*<ErrorBoundary>*/}
-        {/*    <TestErrorBoundary/>*/}
-        {/*</ErrorBoundary>*/}
-        <Main/>
-        <Footer/>
-        <div></div>
-    </div>
-);
+const defaultContext: ContextType = {
+    movies: [{
+            title: "",
+            release_date: "2022",
+            poster_path: "",
+            vote_average: 0,
+            tagline: "",
+            id: 0,
+            runtime: 0
+        }
+    ],
+    searchView: true,
+    detailId: 0,
+    currentMovie: -1,
+}
+
+export const MainContext = createContext(defaultContext);
+
+const App = () => {
+
+    const [movies, setMovies] = useState([]);
+    const [currentMovie, setCurrentMovie] = useState(-1);
+    const [searchView, setView] = useState(true);
+    const [detailId, setDetailId] = useState(0);
+
+    useEffect(() => {
+        getRealMovies(20, setMovies);
+    }, []);
+
+    return (
+        <Provider store={store}>
+            <MainContext.Provider value={{
+                movies,
+                searchView,
+                changeView: setView,
+                detailId,
+                changeDetailId: setDetailId,
+                currentMovie,
+                changeCurrentMovie: setCurrentMovie,
+                changeMovies: setMovies
+            }
+            }>
+                <>
+                    <Header/>
+                    <Main/>
+                    <Footer/>
+                </>
+            </MainContext.Provider>
+        </Provider>
+
+    )
+};
 
 ReactDOM.render(
   <App/>,

@@ -1,23 +1,45 @@
 .cardcontainer {
   display: block;
   position: relative;
-  width: 15rem;
-  height: 31rem;
-}
-
-.cardcontainer--info--title {
-  font-size: 1.5rem;
-  color: white;
-}
-
-.cardcontainer--info--additional {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cardcontainer--info--additional-text{
-  font-size: 1rem;
-  color: gray;
+  width: 16rem;
+  height: 28rem;
+  background-color: hsl(0, 0%, 12%);
+  &--image {
+    width: 16rem;
+    height: 23rem;
+    display: block;
+    margin: 0 auto 0.5rem;
+    cursor: pointer;
+  }
+  &--info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &--info--date {
+    border: 1px solid white;
+    border-radius: 5px;
+    color: gray;
+    padding: 5px;
+    margin: 0;
+  }
+  &--info--title {
+    font-size: 1rem;
+    color: white;
+  }
+  &--info--additional {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &--info--additional-text{
+    font-size: 0.8rem;
+    color: gray;
+  }
+  &--info--additional-text{
+    font-size: 0.8rem;
+    color: gray;
+  }
 }
 
 .contextMenuIcon {
@@ -36,7 +58,7 @@
   font-size: 1.5rem;
   font-weight: bolder;
   top: 0.5rem;
-  right: -0.75rem;
+  right: 0.3rem;
   cursor: pointer;
 }
 

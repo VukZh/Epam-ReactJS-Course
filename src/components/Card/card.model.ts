@@ -1,6 +1,10 @@
 export type CardProps = {
     title: string;
-    releaseDate: number;
+    releaseDate: string;
     imgSrc: string;
-    rating: number
+    rating: number;
+    shortDescription: string;
+    id: number,
+    setDetail: (arg: boolean) => void,
+    setIdMovie: (arg: number) => void,
 };

@@ -1,5 +1,5 @@
 export type ButtonProps = {
     text: string;
     purpose: 'add' | 'search' | 'error';
-    onClick(): void;
+    onClick(arg:any): void;
 };

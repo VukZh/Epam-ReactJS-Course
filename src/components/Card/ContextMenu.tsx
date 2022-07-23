@@ -32,7 +32,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({closeMenu}) => {
             }
 
             {showModalEdit && (
-                <FormAdd typeAdd={false} close={closeFormEditHandler}/>
+                <FormAdd typeAdd={false} close={closeFormEditHandler} />
             )
             }
     </div>
