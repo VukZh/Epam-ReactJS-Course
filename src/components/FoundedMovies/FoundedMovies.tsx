@@ -1,13 +1,12 @@
-import React, {useContext} from "react";
+import React from "react";
 import './styles.scss';
-import {MainContext} from "../../index";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 const FoundedMovies: React.FC = () => {
-    const context = useContext(MainContext);
-    const data = context.movies;
+    const {movies} = useTypedSelector(state => state.movies);
     return (
         <div className="foundedmovies--wrapper">
-            <div className="foundedmovies--text"><b>{data.length}</b> movies found</div>
+            <div className="foundedmovies--text"><b>{movies.length}</b> movies found</div>
         </div>
     )
 }

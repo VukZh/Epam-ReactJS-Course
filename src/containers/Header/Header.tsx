@@ -1,26 +1,26 @@
-import React, {useContext, useState} from 'react';
+import React, {Dispatch} from 'react';
 import SiteName from "../../components/SiteName/SiteName";
 import img from '../../Images/back.png';
 import Button from "../../components/Button/Button";
 import './styles.scss';
-import FormAdd from "../FormAdd/FormAdd";
 import loupe from "../../Images/loupe.png";
 import MovieDetails from "../../components/Details/MovieDetails";
-import {MainContext} from "../../index";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
+import {DetailAction, DetailActionTypes} from "../../store/types";
+import {connect} from "react-redux";
+import {HeaderProps} from "./header.model";
 
-const Header: React.FC = () => {
-    // const [showModal, setShowModal] = useState(false);
-    //
-    // const addMovieHandler = () => setShowModal(true);
-    // const addMovieCloseModalHandler = () => setShowModal(false);
-    //
-    // const context = useContext(MainContext);
-    // const {changeView, searchView, movies} = context;
-    // const imgClickHandler = () => {changeView(true)}
+const Header: React.FC<HeaderProps> = ({setDetail}) => {
 
-    // const CanNotBeDetail = !(!searchView && movies.length);
+    const {detail, idMovie} = useTypedSelector(state => state.detail);
 
-    const CanNotBeDetail = true;
+    const {movies} = useTypedSelector(state => state.movies);
+
+    const CanNotBeDetail = !detail || !(movies.find(movie => movie.id === idMovie));
+
+    const handleClick = () => {
+        setDetail(false)
+    };
 
     return (
         <div className="header" style ={CanNotBeDetail ?{ backgroundImage: `url(${img})`}:{}}>
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                             </>
                         ) : (
                             <>
-                                <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={() => {}}/>
+                                <img src={loupe} alt="" width="30px" height="30px" className="header--loupe" onClick={handleClick}/>
                             </>
                     )
                 }
@@ -64,4 +64,16 @@ const Header: React.FC = () => {
     );
 }
 
-export default Header;
+const mapDispatchToProps = (dispatch: Dispatch<DetailAction>) => {
+    return {
+        setDetail: () =>
+            dispatch({
+                type: DetailActionTypes.SET_DETAIL,
+                payload: false
+            })
+    }
+}
+
+const connector = connect(null, mapDispatchToProps);
+
+export default connector(Header);

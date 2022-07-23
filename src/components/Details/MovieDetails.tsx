@@ -1,17 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './styles.scss';
-import {MainContext} from "../../index";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 const MovieDetails: React.FC = () => {
 
-    const context = useContext(MainContext);
-    const {movies, detailId} = context;
+    const {movies} = useTypedSelector(state => state.movies);
+    const {idMovie} = useTypedSelector(state => state.detail);
 
-    let movie = movies.find((item) => item.id === detailId);
+    const movie = movies.find((movie) => movie.id === idMovie);
 
-    if (!movie) {
-        movie = movies[0];
-    }
 
     const getTimeFromMins = (mins: number): string => {
         let hours = Math.trunc(mins/60);

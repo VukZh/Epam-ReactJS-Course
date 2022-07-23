@@ -4,5 +4,7 @@ export type CardProps = {
     imgSrc: string;
     rating: number;
     shortDescription: string;
-    id: number
+    id: number,
+    setDetail: (arg: boolean) => void,
+    setIdMovie: (arg: number) => void,
 };

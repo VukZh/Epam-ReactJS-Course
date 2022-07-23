@@ -1,15 +1,20 @@
-import React, {useContext} from 'react';
+import React, {Dispatch} from 'react';
 import {CardProps} from './card.model';
 import ContextMenuIcon from "./ContextMenuIcon";
 import './card.style.scss';
-import {MainContext} from "../../index";
+import {DetailAction, DetailActionTypes} from "../../store/types";
+import {connect} from "react-redux";
 
 
-const Card: React.FC<CardProps> = ({title, releaseDate, imgSrc, shortDescription, id}) => {
+const Card: React.FC<CardProps> = ({title, releaseDate, imgSrc, shortDescription, id, setDetail, setIdMovie}) => {
+    const handleClick = () => {
+        setDetail(true);
+        setIdMovie(id);
+    };
 return (
         <div className="cardcontainer">
             <div>
-                <img src={imgSrc} alt="Placeholder image" onClick={() => {}} className="cardcontainer--image"></img>
+                <img src={imgSrc} alt="Placeholder image" onClick={handleClick} className="cardcontainer--image"></img>
                 <ContextMenuIcon id={+id}/>
             </div>
 
@@ -25,5 +30,21 @@ return (
     );
 }
 
+const mapDispatchToProps = (dispatch: Dispatch<DetailAction>) => {
+    return {
+        setDetail: () =>
+            dispatch({
+                type: DetailActionTypes.SET_DETAIL,
+                payload: true
+            }),
+        setIdMovie: (id: number) =>
+            dispatch({
+                type: DetailActionTypes.SET_ID_MOVIE,
+                payload: id
+            }),
+    }
+}
 
-export default Card;
+const connector = connect(null, mapDispatchToProps);
+
+export default connector(Card);
